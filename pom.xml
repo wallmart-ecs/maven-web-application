@@ -30,9 +30,10 @@
                             </goals>
                         </execution>
                 </executions>
+		    </build>
             </plugin>
         </plugins>
-</build>
+
                     
 	
 	
