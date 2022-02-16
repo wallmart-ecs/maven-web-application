@@ -1,6 +1,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion><build>
+        <plugins>
+            <plugin>
+                    <build>
+        <plugins>
+            <plugin>
+                    
+	<groupId>com.mt</groupId>
+
+	                <artifactId>maven-web-application</artifactId>
+
+	                <version>0.0.1-SNAPSHOT</version>
+
+	                <packaging>war</packaging>
+                    <configuration>
+                        <releaseDeploymentRepository>snapshots::default::${release.url}::false</releaseDeploymentRepository>
+                        <stageDeploymentRepository>stage::default::${stage.url}::true</stageDeploymentRepository>
+                        <snapshotDeploymentRepository>release::default::${snapshots.url}::true</snapshotDeploymentRepository>
+                </configuration>
+                <extensions>true</extensions>
+                <executions>
+                        <execution>
+                            <goals>
+                                    <goal>enforce-versions</goal>
+                                    <goal>retarget-deploy</goal>
+                                    <goal>tag-master</goal>
+                                    <goal>promote-master</goal>
+                            </goals>
+                        </execution>
+                </executions>
+            </plugin>
+        </plugins>
+</build>
+                    
+	
 	
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
